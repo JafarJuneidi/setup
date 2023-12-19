@@ -1,7 +1,7 @@
 - name: Install System Packages 1 (unzip, curl)
   become: true
   apt:
-    name: [ "unzip", "curl", "fzf", "tldr", "ripgrep", "tmux" ]
+    name: [ "build-essential", "unzip", "curl", "fzf", "tldr", "ripgrep", "tmux" ]
   tags:
     - install
     - core
