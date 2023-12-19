@@ -1,0 +1,36 @@
+- name: Install System Packages 1 (unzip, curl)
+  become: true
+  apt:
+    name: [ "unzip", "curl", "fzf", "tldr", "ripgrep", "tmux" ]
+  tags:
+    - install
+    - core
+
+- name: Install rustup
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  tags:
+    - install
+    - core
+
+- name: Install Rust packages
+  environment: 
+    PATH: "{{ ansible_env.PATH }}:{{ lookup('env', 'HOME') }}/.cargo/bin"
+  block:
+    - name: Install bob-nvim
+      shell: cargo install --git https://github.com/MordechaiHadad/bob.git
+      tags:
+        - install
+        - dotfiles
+        - core
+    - name: Install bat
+      shell: cargo install --locked bat
+      tags:
+        - install
+        - dotfiles
+        - core
+    - name: Install exa
+      shell: cargo install exa
+      tags:
+        - install
+        - dotfiles
+        - core

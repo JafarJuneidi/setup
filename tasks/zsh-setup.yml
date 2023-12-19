@@ -1,0 +1,20 @@
+- name: Install ZSH
+  apt: name=zsh
+  tags:
+    - dotfiles
+    - install
+    - ssh
+    
+- name: Change shell to zsh
+  shell: chsh -s $(which zsh)
+  tags:
+    - dotfiles
+    - install
+    - ssh
+
+- name: Install Starship
+  shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
+  tags:
+    - dotfiles
+    - install
+    - ssh

@@ -1,0 +1,18 @@
+- name: Install fnm
+  shell: curl -fsSL https://fnm.vercel.app/install | bash
+  tags:
+    - install
+    - node
+
+- name: Install pnpm
+  shell: curl -fsSL https://get.pnpm.io/install.sh | env SHELL=zsh sh -
+  tags:
+    - install
+    - node
+
+- name: Remove .zshrc created by pnpm install
+  become: true
+  shell: rm -rf $HOME/.zshrc
+  tags:
+    - install
+    - node
