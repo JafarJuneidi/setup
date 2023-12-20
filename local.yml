@@ -1,5 +1,4 @@
 - hosts: localhost
-  remote_user: jafar
   vars:
     source_key: "./.ssh/id_ed25519"
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
