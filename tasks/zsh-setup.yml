@@ -7,8 +7,8 @@
     - ssh
     
 - name: Change shell to zsh
-  become_user: jafar
-  shell: chsh -s $(which zsh)
+  become: true
+  shell: usermod -s $(which zsh) jafar
   tags:
     - dotfiles
     - install
