@@ -22,6 +22,12 @@
         - install
         - dotfiles
         - core
+    - name: Install latest nvim
+      shell: bob use latest
+      tags:
+        - install
+        - dotfiles
+        - core
     - name: Install bat
       shell: cargo install --locked bat
       tags:
