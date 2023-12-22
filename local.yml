@@ -14,10 +14,10 @@
       - install
       - core
   tasks:
-    - include: tasks/ssh.yml
-    - include: tasks/git-setup.yml
-    - include: tasks/core-setup.yml
-    - include: tasks/node-setup.yml
-    - include: tasks/zsh-setup.yml
-    # - include: tasks/personal-projects.yml
-    - include: tasks/dotfiles.yml
+    - import_tasks: tasks/ssh.yml
+    - import_tasks: tasks/git-setup.yml
+    - import_tasks: tasks/core-setup.yml
+    - import_tasks: tasks/node-setup.yml
+    - import_tasks: tasks/zsh-setup.yml
+    # - import_tasks: tasks/personal-projects.yml
+    - import_tasks: tasks/dotfiles.yml
