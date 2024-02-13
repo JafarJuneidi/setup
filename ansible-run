@@ -6,4 +6,4 @@ sudo apt-get update -y &&
 sudo apt-get install -y curl git software-properties-common ansible
 
 ## pull ansible
-# ansible-pull -U https://github.com/JafarJuneidi/setup.git --vault-password-file <file> --become-password-file <file>
+# ansible-pull -U https://github.com/JafarJuneidi/setup.git --vault-password-file vault_pass --become-password-file become_pass
